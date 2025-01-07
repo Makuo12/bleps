@@ -1,7 +1,7 @@
 #[cfg(not(feature = "crypto"))]
 use core::marker::PhantomData;
 
-use bt_hci::param::ConnHandle;
+use bt_hci::{cmd::status::ReadRssi, param::ConnHandle};
 use rand_core::{CryptoRng, RngCore};
 
 #[cfg(feature = "crypto")]
@@ -580,8 +580,8 @@ bleps_dedup::dedup! {
 }
 
 impl<'a, R: CryptoRng + RngCore> AttributeServer<'a, R> {
-    pub fn get_conn_handle(&self) -> ConnHandle {
-        return ConnHandle::new(self.src_handle);
+    pub fn get_conn_handle(&self) -> ReadRssi {
+        return ReadRssi::new(ConnHandle::new(self.src_handle));
     }
     /// Create a new instance of the AttributeServer
     ///
