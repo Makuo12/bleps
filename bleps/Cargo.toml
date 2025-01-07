@@ -32,7 +32,7 @@ rand_core = "0.6.4"
 p256 = { version = "0.13.2", default-features = false, features = ["ecdh","arithmetic"], optional = true }
 aes = { version = "0.8.2", optional = true }
 cmac = { version = "0.7.2", optional = true }
-
+bt-hci = "0.2.0"
 [dev-dependencies]
 env_logger = "0.10.0"
 p256 = { version = "0.13.2", default-features = true }

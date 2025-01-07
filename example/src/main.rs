@@ -159,7 +159,7 @@ fn main() {
             ltk,
             &mut rng,
         );
-
+        
         let mut pin_callback = |pin: u32| {
             println!("PIN is {pin}");
         };
